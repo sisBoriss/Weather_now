@@ -1,50 +1,54 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <link rel="shortcut icon" href="#" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather now!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"></link>
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
     <main class="page">
-        <header class="main-header">
-     
+      <header class="main-header">
+        <img
+          src="https://www.svgrepo.com/show/491948/weather-color-moon-cloud-light.svg"
+          width="35px"
+          height="35px"
+          alt="Website Logo"
+        />
 
-              <img src="https://www.svgrepo.com/show/491948/weather-color-moon-cloud-light.svg" width="35px" height="35px" alt='Website Logo'> 
+        <input
+          id="userInput"
+          placeholder="Type city and press enter"
+          required
+          autofocus
+        />
+        <button class="button-59" id="getWeatherb">Get it</button>
+      </header>
 
-            
+      <article class="weather" id="weatherInfo">
+        <section id="map">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0da8ac1f226848d21a3bc4ac1ccc811c6f218b5f0ed399478604ad5af2ad97cf&amp;&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+        </section>
+        <section id="response-info">
+          <div>
+            <h1 id="Weather-title">Weather info</h1>
+          </div>
+        </section>
 
-            <input id="userInput"
-                   placeholder="Type city and press enter"
-                           required
-                   autofocus />
-            <button class="button-59" id="getWeatherb">Get it</button>
-
-        </header>
-
-                     <article class='weather' id="weatherInfo">
-            <section id="map">
-               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0da8ac1f226848d21a3bc4ac1ccc811c6f218b5f0ed399478604ad5af2ad97cf&amp;&amp;lang=ru_RU&amp;scroll=true"></script>
-            </section>
-            <section id="response-info">
-                <div>
-                    <h1 id="Weather-title">Weather info</h1>
-                </div>
-
-            </section>
-        
-        
-    <section id="history-info">
-        <div id="history-title">
+        <section id="history-info">
+          <div id="history-title">
             <h1 id="history-title">History</h1>
-        </div>
-
-    </section>
-        </article>
+          </div>
+        </section>
+      </article>
     </main>
-            <script src="script_weather_info.js"></script>
-</body>
+    <script src="script_weather_info.js"></script>
+  </body>
 </html>
