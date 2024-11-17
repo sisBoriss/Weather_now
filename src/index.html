@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather now!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://api-maps.yandex.ru/2.1?apikey=86c38176-bc99-4e59-8c87-bd7b27ed1ea5&lang=ru_RU" type="text/javascript"></script>
+    </script>
 </head>
 <body>
     <main class="page">
         <header class="main-header">
-     
-
+     <!--for commit-->
               <img src="https://www.svgrepo.com/show/491948/weather-color-moon-cloud-light.svg" width="35px" height="35px" alt='Website Logo'> 
 
             
@@ -21,13 +22,15 @@
                    placeholder="Type city and press enter"
                            required
                    autofocus />
-            <button class="button-59" id="getWeatherb">Get it</button>
+            <button class="button59" id="getWeatherb">Get it</button>
 
         </header>
 
                      <article class='weather' id="weatherInfo">
             <section id="map">
-               <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0da8ac1f226848d21a3bc4ac1ccc811c6f218b5f0ed399478604ad5af2ad97cf&amp;&amp;lang=ru_RU&amp;scroll=true"></script>
+               
+              <!-- <img id="httpmap" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0da8ac1f226848d21a3bc4ac1ccc811c6f218b5f0ed399478604ad5af2ad97cf&amp;&amp;lang=ru_RU&amp;scroll=true"></script>
+            -->
             </section>
             <section id="response-info">
                 <div>
@@ -38,7 +41,7 @@
         
         
     <section id="history-info">
-        <div id="history-title">
+        <div id="history-container">
             <h1 id="history-title">History</h1>
         </div>
 
