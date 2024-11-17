@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "prettier --check . && eslint .",
-    "lint:fix": "prettier --check . && eslint . --check",
+    "prettier:check": "prettier --check .",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -23,8 +23,8 @@
     "prettier": "^3.3.3"
   },
   "lint-staged": {
-    "*.js": "eslint --check",
-    "*.{js,css,md}": "prettier --check"
+    "*.js": "eslint --fix .",
+    "*.{js,css,md}": "prettier --write ."
   },
   "dependencies": {
     "express": "^4.21.1"
