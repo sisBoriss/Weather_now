@@ -4,10 +4,10 @@
   let map;
   let coord;
   const token = 'f07624d2b0ab1b2677906af3f93c4cad';
-  const map_token = '86c38176-bc99-4e59-8c87-bd7b27ed1ea5';
+ // const map_token = '86c38176-bc99-4e59-8c87-bd7b27ed1ea5';
   let lat = '';
   let lon = '';
-  let httpMap = `https://static-maps.yandex.ru/v1?ll=${lon},${lat}&lang=ru_RU&size=312,360&apikey=${map_token}`;
+  //let httpMap = `https://static-maps.yandex.ru/v1?ll=${lon},${lat}&lang=ru_RU&size=312,360&apikey=${map_token}`;
   const weatherInfoEl = document.querySelector("#response-info");
  coord = getWeatherUserLocation();
 
@@ -38,7 +38,7 @@
     const responseLocal = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     const data = await responseLocal.json();
     const city = data.city;
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${token}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${token}`);
     const jsonData = await response.json();
      lat = jsonData[0].lat;
      lon = jsonData[0].lon;
@@ -57,7 +57,7 @@
      return coordinates
   }
   async function getWeather(cityName) {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${token}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${token}`);
     const jsonData = await response.json();
      lat = jsonData[0].lat;
      lon = jsonData[0].lon;
