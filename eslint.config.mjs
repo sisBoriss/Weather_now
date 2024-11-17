@@ -4,9 +4,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {languageOptions: { globals: globals.browser },
-  files: ["**/*.js"]
-},
+  { languageOptions: { globals: globals.browser }, files: ["**/*.js"] },
   pluginJs.configs.recommended,
-  eslintConfigPrettier
+  eslintConfigPrettier,
 ];
