@@ -34,6 +34,7 @@
       innerSection.innerHTML = weatherInfo;
     }
   }
+  
   async function getWeatherUserLocation() {
     const responseLocal = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     const data = await responseLocal.json();
