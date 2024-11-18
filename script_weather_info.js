@@ -4,10 +4,10 @@
   let map;
   let coord;
   const token = 'f07624d2b0ab1b2677906af3f93c4cad';
-  const map_token = '86c38176-bc99-4e59-8c87-bd7b27ed1ea5';
+ // const map_token = '86c38176-bc99-4e59-8c87-bd7b27ed1ea5';
   let lat = '';
   let lon = '';
-  let httpMap = `https://static-maps.yandex.ru/v1?ll=${lon},${lat}&lang=ru_RU&size=312,360&apikey=${map_token}`;
+  //let httpMap = `https://static-maps.yandex.ru/v1?ll=${lon},${lat}&lang=ru_RU&size=312,360&apikey=${map_token}`;
   const weatherInfoEl = document.querySelector("#response-info");
  coord = getWeatherUserLocation();
 
@@ -34,6 +34,7 @@
       innerSection.innerHTML = weatherInfo;
     }
   }
+  
   async function getWeatherUserLocation() {
     const responseLocal = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     const data = await responseLocal.json();
@@ -44,9 +45,9 @@
      lon = jsonData[0].lon;
     const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${token}`);
     const weatherData = await result.json();
-
+    let temp = weatherData.main['temp']
    let textWeather = `City : ${weatherData.name}`  + "<br />" +
-      `Temperature: ${weatherData.main['temp']} ` + "<br />" +
+      `Temperature: ${temp - 273,15}° ` + "<br />" +
       `Pressure: ${weatherData.main['pressure']}` + "<br />" +
       `Wind speed: ${weatherData.wind['speed']}` + "<br />" +
       `Description: ${weatherData.weather[0]['description']}`;
@@ -63,8 +64,9 @@
      lon = jsonData[0].lon;
     const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${token}`);
     const weatherData = await result.json();
+    let temp = weatherData.main['temp']
     let textWeather = `City : ${weatherData.name}`  + "<br />" +
-    `Temperature: ${weatherData.main['temp']} ` + "<br />" +
+    `Temperature: ${temp - 273,15}° ` + "<br />" +
     `Pressure: ${weatherData.main['pressure']}` + "<br />" +
     `Wind speed: ${weatherData.wind['speed']}` + "<br />" +
     `Description: ${weatherData.weather[0]['description']}`;
