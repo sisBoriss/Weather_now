@@ -45,9 +45,9 @@
      lon = jsonData[0].lon;
     const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${token}`);
     const weatherData = await result.json();
-
+    let temp = weatherData.main['temp']
    let textWeather = `City : ${weatherData.name}`  + "<br />" +
-      `Temperature: ${weatherData.main['temp']} ` + "<br />" +
+      `Temperature: ${temp - 273,15}° ` + "<br />" +
       `Pressure: ${weatherData.main['pressure']}` + "<br />" +
       `Wind speed: ${weatherData.wind['speed']}` + "<br />" +
       `Description: ${weatherData.weather[0]['description']}`;
@@ -64,8 +64,9 @@
      lon = jsonData[0].lon;
     const result = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${token}`);
     const weatherData = await result.json();
+    let temp = weatherData.main['temp']
     let textWeather = `City : ${weatherData.name}`  + "<br />" +
-    `Temperature: ${weatherData.main['temp']} ` + "<br />" +
+    `Temperature: ${temp - 273,15}° ` + "<br />" +
     `Pressure: ${weatherData.main['pressure']}` + "<br />" +
     `Wind speed: ${weatherData.wind['speed']}` + "<br />" +
     `Description: ${weatherData.weather[0]['description']}`;
