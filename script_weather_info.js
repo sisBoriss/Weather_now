@@ -38,7 +38,7 @@
     const responseLocal = await fetch(`https://get.geojs.io/v1/ip/geo.json`);
     const data = await responseLocal.json();
     const city = data.city;
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${token}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${token}`);
     const jsonData = await response.json();
      lat = jsonData[0].lat;
      lon = jsonData[0].lon;
@@ -57,7 +57,7 @@
      return coordinates
   }
   async function getWeather(cityName) {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${token}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${token}`);
     const jsonData = await response.json();
      lat = jsonData[0].lat;
      lon = jsonData[0].lon;
